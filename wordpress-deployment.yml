@@ -33,3 +33,12 @@ spec:
           value: wordpress
         - name: WORDPRESS_DB_PASSWORD
           value: wordpress123
+        volumeMounts:
+        - mountPath: /var/www/html
+          name: wordpress-volume
+      volumes:
+      - name: wordpress-volume
+        hostPath: 
+          path: /data-wordpress
+          type: DirectoryOrCreate
+
