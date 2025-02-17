@@ -33,3 +33,11 @@ spec:
           value: wordpress
         - name: MYSQL_PASSWORD
           value: wordpress123
+        volumeMounts:
+        - mountPath: /var/lib/mysql
+          name: mysql-volume
+      volumes:
+      - name: mysql-volume
+        hostPath:
+          path: /data-mysql
+          type: DirectoryOrCreate
