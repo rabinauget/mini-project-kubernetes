@@ -21,12 +21,12 @@ spec:
     spec:
       containers:
       - name: mysql-deployment
-        image: mysql:9.2.0
+        image: mysql:8.0
         ports:
         - containerPort: 3306
         env:
         - name: MYSQL_ROOT_PASSWORD
-          value: wordpress
+          value: wordpress123
         - name: MYSQL_DATABASE
           value: wordpress
         - name: MYSQL_USER
