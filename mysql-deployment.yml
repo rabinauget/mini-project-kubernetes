@@ -42,7 +42,7 @@ spec:
               name: secret
               key: mysql-user
         - name: MYSQL_PASSWORD
-          valueForm:
+          valueFrom:
             secretKeyRef:
               name: secret
               key: mysql-password
