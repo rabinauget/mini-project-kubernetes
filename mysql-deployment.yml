@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mysql-deployment
+  namespace: mini-projet
   labels:
     app: mysql
 spec:
@@ -26,13 +27,25 @@ spec:
         - containerPort: 3306
         env:
         - name: MYSQL_ROOT_PASSWORD
-          value: wordpress123
+          valueFrom:
+            secretKeyRef:
+              name: secret
+              key: mysql-root-password
         - name: MYSQL_DATABASE
-          value: wordpress
+          valueFrom:
+            secretKeyRef:
+              name: secret
+              key: mysql-database
         - name: MYSQL_USER
-          value: wordpress
+          valueFrom:
+            secretKeyRef:
+              name: secret
+              key: mysql-user
         - name: MYSQL_PASSWORD
-          value: wordpress123
+          valueForm:
+            secretKeyRef:
+              name: secret
+              key: mysql-password
         volumeMounts:
         - mountPath: /var/lib/mysql
           name: mysql-volume
