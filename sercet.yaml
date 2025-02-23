@@ -5,7 +5,11 @@ metadata:
   namespace: mini-projet
 type: Opaque
 data:
-  mysql-root-password: d29yZHByZXNz
-  mysql-database: d29yZHByZXNz
-  mysql-user: d29yZHByZXNz
-  mysql-password: d29yZHByZXNzMTIz
+  MYSQL_ROOT_PASSWORD: d29yZHJlc3M=
+  MYSQL_DATABASE: d29yZHJlc3M=
+  MYSQL_USER: d29yZHJlc3M=
+  MYSQL_PASSWORD: d29yZHJlc3MxMjM=
+  WORDPRESS_DB_HOST: mysql-service
+  WORDPRESS_DB_NAME: d29yZHJlc3M=
+  WORDPRESS_DB_USER: d29yZHJlc3M=
+  WORDPRESS_DB_PASSWORD: d29yZHJlc3MxMjM=
