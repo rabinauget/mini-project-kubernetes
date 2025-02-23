@@ -25,9 +25,27 @@ spec:
         image: wordpress:6.7.2-php8.3
         ports:
         - containerPort: 80
-        envFrom:
-        - secretRef:
-            name: secret
+        env:
+        - name: WORDPRESS_DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: wp-config
+              key: WORDPRESS_DB_HOST
+        - name: WORDPRESS_DB_NAME
+          valueFrom:
+            secretKeyRef:
+              name: wp-secret
+              key: WORDPRESS_DB_NAME
+        - name: WORDPRESS_DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: wp-secret
+              key: WORDPRESS_DB_USER
+        - name: WORDPRESS_DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: wp-secret
+              key: WORDPRESS_DB_PASSWORD
         volumeMounts:
         - mountPath: /var/www/html
           name: wordpress-volume
